@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blosso | Floral Living &amp; Care Journal</title>
+  <meta name="description" content="Explore flower care secrets, seasonal bloom calendars, bridal floral styling guides, and floriography from the master florists at Blosso.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-links announcement-left">
+        <a href="tel:+18005553567"><span>📞 Concierge: +1 (800) 555-BLOSSO</span></a>
+      </div>
+      <div class="announcement-ticker">
+        <span>✨ Complimentary Card &amp; Chilled Same-Day Delivery over $75 &middot; Code: <strong>BLOSSO10</strong></span>
+      </div>
+      <div class="announcement-links announcement-right">
+        <a href="delivery.html">Delivery Coverage</a>
+        <a href="contact.html">Boutique Hours</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Blosso Home">
+        <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-dasharray="4 2"/>
+          <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z" fill="currentColor" fill-opacity="0.18"/>
+          <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Blosso</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="delivery.html" class="nav-link">Delivery</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Controls: RTL, Theme Toggle & CTA Button -->
+      <div class="header-actions">
+        <!-- RTL Toggle Button -->
+        <button class="header-util-btn" onclick="toggleRTL()" title="Toggle RTL / LTR Layout" aria-label="Toggle Text Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19h16M4 15h10M4 11h16M4 7h10"></path>
+          </svg>
+          <span class="rtl-btn-text">RTL</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="header-util-btn header-util-icon-only" onclick="toggleTheme()" title="Toggle Dark / Light Mode" aria-label="Toggle Theme">
+          <span class="theme-icon-sun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-icon-moon" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Header CTA Button -->
+        <a href="products.html" class="btn btn-primary btn-sm header-cta-btn">Order Now &rarr;</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-toggle-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-name" style="font-size:1.4rem;">Blosso</span>
+      <button class="btn-card-action" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home2</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="products.html" class="btn btn-primary" style="width:100%; margin-bottom:10px;">Order Now &rarr;</a>
+      <a href="tel:+18005553567" class="btn btn-outline-primary btn-sm" style="width:100%;">Call +1 (800) 555-BLOSSO</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================= SECTION 1: JOURNAL HERO & FEATURED SPOTLIGHT ARTICLE ================= -->
+    <section class="page-hero blog-page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <span style="color:var(--color-primary); font-weight:600;">The Botanical Gazette</span>
+        </div>
+        <span class="tag-label">Floral Wisdom &middot; Boutique Stories</span>
+        <h1 class="heading-lg" style="margin-bottom:14px;">The Art of Floral Living</h1>
+        <p class="text-muted" style="max-width:600px; margin:0 auto 40px;">
+          Curated guides on stem longevity, Victorian floriography, bridal centerpieces, and seasonal flower appreciation.
+        </p>
+
+        <!-- Spotlight Featured Card -->
+        <div class="blog-featured-card" style="text-align:left;">
+          <div class="blog-featured-img">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1000&q=80" alt="English Garden Roses">
+          </div>
+          <div class="blog-featured-content">
+            <span class="badge badge-rose" style="margin-bottom:12px; align-self:flex-start;">Featured Masterclass</span>
+            <div class="blog-meta">
+              <span>August 18, 2026</span>
+              <span>&middot;</span>
+              <span>5 min read</span>
+              <span>&middot;</span>
+              <span>By Camille Laurent</span>
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(1.5rem, 2.2vw, 2rem); margin-bottom:14px; line-height:1.25;">
+              The Art of English Garden Roses: 7 Secrets to Double Their Vase Life
+            </h2>
+            <p style="font-size:0.92rem; color:var(--color-muted); line-height:1.7; margin-bottom:24px;">
+              From the 45-degree underwater stem trim to optimal room humidity and ice-water refreshing tricks, discover how master florists keep delicate petals vibrant for up to two weeks.
+            </p>
+            <a href="blog-detail.html?id=blog-01" class="btn btn-primary btn-sm" style="align-self:flex-start;">Read Complete Guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: TOPIC NAVIGATION ================= -->
+    <section style="background-color: var(--color-bg-base); padding-top:20px;">
+      <div class="container">
+        <div class="occasion-tabs-nav">
+          <button class="occasion-tab-item blog-topic-pill active" data-topic="all">All Articles (6)</button>
+          <button class="occasion-tab-item blog-topic-pill" data-topic="flower care">Flower Care &amp; Tips</button>
+          <button class="occasion-tab-item blog-topic-pill" data-topic="gifting guides">Gifting Etiquette</button>
+          <button class="occasion-tab-item blog-topic-pill" data-topic="floral styling">Floral Styling</button>
+          <button class="occasion-tab-item blog-topic-pill" data-topic="behind the stems">Behind The Stems</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: EDITORIAL ARTICLES GRID ================= -->
+    <section class="section-padding-sm" style="background-color: var(--color-bg-base);">
+      <div class="container">
+        <div class="blog-grid" id="blog-articles-grid">
+          <!-- Article 1 -->
+          <article class="blog-card blog-item-card" data-category="gifting guides">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-02">
+                <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80" alt="Anniversary Bouquet">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-rose" style="margin-bottom:10px; align-self:flex-start;">Gifting Guides</span>
+              <div class="blog-meta">
+                <span>August 10, 2026</span> &middot; <span>4 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-02">How to Pick the Perfect Anniversary Bouquet by Milestone Year</a></h3>
+              <p class="blog-excerpt">Victorian symbolism meets modern botanical aesthetics: which stems celebrate 1st, 5th, 10th, and 25th wedding anniversaries.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-02">Read Article &rarr;</a></div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card blog-item-card" data-category="floral styling">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-03">
+                <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80" alt="Preserving Peonies">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-sage" style="margin-bottom:10px; align-self:flex-start;">Floral Styling</span>
+              <div class="blog-meta">
+                <span>July 29, 2026</span> &middot; <span>6 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-03">Drying &amp; Preserving Wedding Peonies: Step-by-Step Boutique Guide</a></h3>
+              <p class="blog-excerpt">Preserve your bridal memories forever with our silica-gel drying techniques and botanical shadowbox framing methods.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-03">Read Article &rarr;</a></div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card blog-item-card" data-category="flower care">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-04">
+                <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80" alt="Pet Safe Flowers">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-sage" style="margin-bottom:10px; align-self:flex-start;">Flower Care</span>
+              <div class="blog-meta">
+                <span>July 14, 2026</span> &middot; <span>4 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-04">Pet-Safe Blooms: Beautiful Stems That Won't Harm Cats and Dogs</a></h3>
+              <p class="blog-excerpt">A comprehensive florist and veterinary guide to safe flowers like Lisianthus, Sunflowers, and Orchids, and stems to strictly avoid.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-04">Read Article &rarr;</a></div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-card blog-item-card" data-category="floral styling">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-05">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" alt="Wildflower Arrangements">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-rose" style="margin-bottom:10px; align-self:flex-start;">Floral Styling</span>
+              <div class="blog-meta">
+                <span>June 30, 2026</span> &middot; <span>5 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-05">Arranging Wildflowers with the Effortless French Countryside Look</a></h3>
+              <p class="blog-excerpt">Embrace organic asymmetry, varied stem heights, and airy foliage pairings to create spontaneous tabletop arrangements.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-05">Read Article &rarr;</a></div>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-card blog-item-card" data-category="behind the stems">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-06">
+                <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80" alt="Victorian Floriography">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-gold" style="margin-bottom:10px; align-self:flex-start;">Behind The Stems</span>
+              <div class="blog-meta">
+                <span>June 18, 2026</span> &middot; <span>7 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-06">The Secret Language of Flowers: Clandestine Victorian Floriography</a></h3>
+              <p class="blog-excerpt">Uncover the rich historical language of 19th-century lovers who exchanged clandestine messages through flower petal combinations.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-06">Read Article &rarr;</a></div>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-card blog-item-card" data-category="flower care">
+            <div class="blog-img-wrap">
+              <a href="blog-detail.html?id=blog-01">
+                <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=800&q=80" alt="Tulip care guide">
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <span class="badge badge-sage" style="margin-bottom:10px; align-self:flex-start;">Flower Care</span>
+              <div class="blog-meta">
+                <span>June 05, 2026</span> &middot; <span>3 min read</span>
+              </div>
+              <h3 class="blog-card-title"><a href="blog-detail.html?id=blog-01">Why Do Tulips Keep Growing in the Vase? (And How to Style Them)</a></h3>
+              <p class="blog-excerpt">Discover why fresh-cut tulips gain up to 2 inches after harvest, and how to harness their graceful arching curves.</p>
+              <div style="margin-top:auto; font-size:0.82rem; font-weight:600; color:var(--color-primary);"><a href="blog-detail.html?id=blog-01">Read Article &rarr;</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: INTERACTIVE STEP-BY-STEP FLOWER CARE GUIDE ================= -->
+    <section class="section-padding" style="background-color: var(--color-bg-warm);" id="care-guide">
+      <div class="container">
+        <div class="text-center" style="max-width:650px; margin:0 auto 40px;">
+          <span class="tag-label">Master Florist Secrets</span>
+          <h2 class="heading-lg">4 Steps to Double Your Bouquet’s Vase Life</h2>
+          <div class="botanical-divider">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <p class="text-muted">Follow these simple steps when your Blosso delivery arrives at your door.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+          <div style="background:#FFFFFF; padding:28px 24px; border-radius:var(--radius-md); border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--color-primary-soft); color:var(--color-primary); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; margin-bottom:16px;">1</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:8px;">Diagonal 45° Stem Cut</h4>
+            <p style="font-size:0.85rem; color:var(--color-muted); line-height:1.6;">Trim 1 inch off the bottom of each stem at a 45-degree angle underwater to prevent air bubbles from blocking hydration.</p>
+          </div>
+
+          <div style="background:#FFFFFF; padding:28px 24px; border-radius:var(--radius-md); border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--color-primary-soft); color:var(--color-primary); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; margin-bottom:16px;">2</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:8px;">Clean Vessel &amp; Food</h4>
+            <p style="font-size:0.85rem; color:var(--color-muted); line-height:1.6;">Wash your glass vase thoroughly with mild soap and fill with lukewarm filtered water mixed with our organic nutrient packet.</p>
+          </div>
+
+          <div style="background:#FFFFFF; padding:28px 24px; border-radius:var(--radius-md); border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--color-primary-soft); color:var(--color-primary); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; margin-bottom:16px;">3</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:8px;">Strip Submerged Foliage</h4>
+            <p style="font-size:0.85rem; color:var(--color-muted); line-height:1.6;">Remove any leaves that will sit below the waterline. Submerged foliage creates bacterial growth that prematurely wilts stems.</p>
+          </div>
+
+          <div style="background:#FFFFFF; padding:28px 24px; border-radius:var(--radius-md); border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--color-primary-soft); color:var(--color-primary); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; margin-bottom:16px;">4</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:8px;">Shield from Direct Heat</h4>
+            <p style="font-size:0.85rem; color:var(--color-muted); line-height:1.6;">Place blooms in bright, indirect light away from radiators, air conditioners, and fruit bowls (ethylene gas accelerates aging).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: SEASONAL BLOOM CALENDAR ================= -->
+    <section class="section-padding" style="background-color: var(--color-bg-base);">
+      <div class="container">
+        <div class="text-center" style="max-width:650px; margin:0 auto 40px;">
+          <span class="tag-label">Nature’s Rhythm</span>
+          <h2 class="heading-lg">Seasonal Bloom Peak Calendar</h2>
+          <div class="botanical-divider">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF; border-radius:var(--radius-lg); border:1px solid var(--color-border); overflow-x:auto; box-shadow:var(--shadow-sm);">
+          <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.88rem; min-width:600px;">
+            <thead>
+              <tr style="background:var(--color-bg-warm); border-bottom:1px solid var(--color-border);">
+                <th style="padding:16px 20px; font-family:var(--font-serif); font-size:1.05rem;">Flower Variety</th>
+                <th style="padding:16px 20px; font-family:var(--font-serif); font-size:1.05rem;">Peak Seasons</th>
+                <th style="padding:16px 20px; font-family:var(--font-serif); font-size:1.05rem;">Fragrance Profile</th>
+                <th style="padding:16px 20px; font-family:var(--font-serif); font-size:1.05rem;">Average Vase Life</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:16px 20px; font-weight:600;">🌸 French Peonies</td>
+                <td style="padding:16px 20px; color:var(--color-primary);">May &ndash; July</td>
+                <td style="padding:16px 20px; color:var(--color-muted);">Sweet, powdery, honeyed citrus</td>
+                <td style="padding:16px 20px; font-weight:600;">7 &ndash; 10 Days</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:16px 20px; font-weight:600;">🌹 Garden Roses (O'Hara &amp; Juliet)</td>
+                <td style="padding:16px 20px; color:var(--color-primary);">Year-Round (Peak: Spring/Fall)</td>
+                <td style="padding:16px 20px; color:var(--color-muted);">Rich fruity classic damask</td>
+                <td style="padding:16px 20px; font-weight:600;">8 &ndash; 14 Days</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:16px 20px; font-weight:600;">🌺 Café au Lait Dahlias</td>
+                <td style="padding:16px 20px; color:var(--color-primary);">August &ndash; October</td>
+                <td style="padding:16px 20px; color:var(--color-muted);">Subtle green earthiness</td>
+                <td style="padding:16px 20px; font-weight:600;">6 &ndash; 8 Days</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:16px 20px; font-weight:600;">🌷 Dutch Parrot Tulips</td>
+                <td style="padding:16px 20px; color:var(--color-primary);">January &ndash; April</td>
+                <td style="padding:16px 20px; color:var(--color-muted);">Fresh crisp spring air</td>
+                <td style="padding:16px 20px; font-weight:600;">7 &ndash; 11 Days</td>
+              </tr>
+              <tr>
+                <td style="padding:16px 20px; font-weight:600;">🌿 Cymbidium Orchids</td>
+                <td style="padding:16px 20px; color:var(--color-primary);">October &ndash; March</td>
+                <td style="padding:16px 20px; color:var(--color-muted);">Delicate floral vanilla</td>
+                <td style="padding:16px 20px; font-weight:600;">14 &ndash; 21 Days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: FREE HANDBOOK & MASTERCLASS CTA ================= -->
+    <section class="section-padding" style="background:linear-gradient(135deg, #334237 0%, #1F2421 100%); color:#FFFFFF;">
+      <div class="container container-narrow text-center">
+        <span class="badge badge-gold" style="margin-bottom:14px;">Free Boutique Digital Edition</span>
+        <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3vw, 2.6rem); color:#FFFFFF; margin-bottom:16px;">
+          Download "The Master Florist’s Guide to Home Arranging"
+        </h2>
+        <p style="opacity:0.9; font-size:0.95rem; line-height:1.7; margin-bottom:28px;">
+          A 42-page illustrated digital handbook with step-by-step vase proportions, French spiral tying methods, and flower color theory.
+        </p>
+        <form class="footer-newsletter-form" style="max-width:460px; margin:0 auto;">
+          <div class="newsletter-input-group">
+            <input type="email" class="form-input" style="background:#FFFFFF; border:none;" placeholder="Enter email to get free PDF..." required>
+            <button type="submit" class="btn btn-white" style="color:var(--color-primary); font-weight:700;">Get Guide</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MASTER BLOSSO FOOTER ================= -->
+  <footer class="site-footer">
+    <!-- VIP Newsletter Bar -->
+    <div class="footer-vip-strip">
+      <div class="container">
+        <div class="vip-strip-content">
+          <div class="vip-strip-text">
+            <span class="vip-strip-badge">🌸 VIP Botanical Society</span>
+            <h3 class="vip-strip-title">Receive Private Previews &amp; 15% Off Your First Arrangement</h3>
+            <p class="vip-strip-desc">
+              Curated stem pairing secrets, invitations to seasonal masterclasses, and instant code <strong>BLOSSO10</strong>.
+            </p>
+          </div>
+          <form class="vip-newsletter-form" onsubmit="event.preventDefault(); showToast('🌸 Welcome to the VIP Botanical Society! Code BLOSSO10 applied.'); this.reset();">
+            <div class="vip-input-wrap">
+              <input type="email" class="vip-email-input" placeholder="Enter your email address..." required>
+              <button type="submit" class="btn btn-primary btn-sm">Join VIP Circle</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="container footer-main-content">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:14px;">
+            <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="2.5">
+              <circle cx="50" cy="50" r="46" stroke="#FFFFFF" stroke-dasharray="4 2" />
+              <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z" fill="#FFFFFF" fill-opacity="0.18" />
+              <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z" stroke="#FFFFFF" stroke-width="2.5" />
+              <circle cx="50" cy="50" r="4.5" fill="#FFFFFF" />
+            </svg>
+            <span class="brand-name" style="color:#FFFFFF;">Blosso</span>
+          </a>
+          <p class="footer-brand-bio">
+            Haute floristry studio handcrafting bespoke hand-tied bouquets, ceremonial vows, and luxury hospitality installations with chilled same-day delivery.
+          </p>
+          <div class="footer-contact-specs">
+            <div class="footer-spec-item">
+              <span class="spec-icon">📍</span>
+              <span>742 Evergreen Botanical Way, Suite 100, NY 10065</span>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">📞</span>
+              <a href="tel:+18005553567">+1 (800) 555-BLOSSO (3567)</a>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">✉️</span>
+              <a href="mailto:concierge@blosso.com">concierge@blosso.com</a>
+            </div>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Pinterest">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.1-2 .1-2.9l1.4-5.9s-.4-.8-.4-1.9c0-1.8 1-3.1 2.3-3.1 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1.1 4.2-.3 1.3.6 2.3 1.9 2.3 2.3 0 3.9-2.9 3.9-6.4 0-2.6-1.8-4.6-5-4.6-3.6 0-5.9 2.7-5.9 5.8 0 1 .3 1.8.8 2.3.1.1.1.2 0 .4l-.3 1.1c0 .2-.2.3-.4.2-1.3-.6-1.9-2.2-1.9-3.6 0-2.7 2.3-6 6.8-6 3.6 0 6.1 2.6 6.1 5.5 0 3.8-2.1 6.6-5.2 6.6-1 0-2-.6-2.3-1.2l-.6 2.5c-.2 1-.9 2.2-1.3 3A10 10 0 1 0 12 2z"></path></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html">Home</a>
+            <a href="home2.html">Home2 (Editorial)</a>
+            <a href="about.html">Our Story</a>
+            <a href="products.html">Floral Collections</a>
+            <a href="delivery.html">Same-Day Delivery</a>
+            <a href="blog.html">Botanical Journal</a>
+            <a href="contact.html">Contact &amp; Flagship</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Collections -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Occasion Stems</h4>
+          <div class="footer-links-list">
+            <a href="products.html?occasion=Birthday">Birthday Radiance</a>
+            <a href="products.html?occasion=Anniversary">Anniversary &amp; Romance</a>
+            <a href="products.html?occasion=Wedding">Wedding &amp; Ceremonials</a>
+            <a href="products.html?occasion=Sympathy">Sympathy &amp; Serenity</a>
+            <a href="products.html?occasion=Congratulations">Milestones &amp; Cheers</a>
+            <a href="delivery.html#custom-builder">Custom Bouquet Builder</a>
+          </div>
+        </div>
+
+        <!-- Column 4: Boutique Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Boutique Services</h4>
+          <div class="footer-links-list">
+            <a href="delivery.html">7-Day Freshness Promise</a>
+            <a href="delivery.html">Chilled Delivery Fleet</a>
+            <a href="delivery.html#bulk-orders">Corporate Subscriptions</a>
+            <a href="about.html">Floral Guild Heritage</a>
+            <a href="blog.html">Interactive Care Guides</a>
+            <a href="contact.html">Private Styling Hotline</a>
+          </div>
+        </div>
+
+        <!-- Column 5: Flagship Hours -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Flagship Boutique</h4>
+          <div class="footer-hours-box">
+            <div class="hours-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span>Open 7 Days A Week</span>
+            </div>
+            <div class="hours-schedule">
+              <div class="hours-row">
+                <span>Mon – Fri:</span>
+                <strong>7:30 AM – 7:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Saturday:</span>
+                <strong>8:00 AM – 6:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sunday:</span>
+                <strong>9:00 AM – 5:00 PM</strong>
+              </div>
+            </div>
+            <span class="valet-note">✨ Complimentary Porte-Cochère Valet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          &copy; 2026 Blosso Artisanal Floristry LLC. All botanical creations reserved.
+        </div>
+        <div class="footer-trust-badges">
+          <span>🔒 256-Bit SSL Encrypted</span>
+          <span>🌱 100% Eco-Farm Sourced</span>
+          <span>❄️ Chilled Transit Guarantee</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="shipping.html">Shipping</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals & Drawers -->
+  <div class="drawer-backdrop" id="cart-drawer-backdrop" onclick="closeCartDrawer()"></div>
+  <aside class="drawer-panel" id="cart-drawer-panel" aria-label="Shopping Bag Drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Your Bouquet Bag</h3>
+      <button class="btn-card-action" onclick="closeCartDrawer()" aria-label="Close Bag">✕</button>
+    </div>
+    <div class="drawer-body" id="cart-items-container"></div>
+    <div class="drawer-footer">
+      <div style="display:flex; gap:8px; margin-bottom:16px;">
+        <input type="text" id="cart-promo-input" placeholder="Promo code (e.g. BLOSSO10)" style="flex:1; border:1px solid var(--color-border); padding:8px 12px; border-radius:var(--radius-sm); font-size:0.85rem;">
+        <button id="apply-promo-btn" class="btn btn-outline-primary btn-sm">Apply</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:6px; color:var(--color-muted);">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+      <div id="cart-discount-row" style="display:none; justify-content:space-between; font-size:0.9rem; margin-bottom:6px; color:var(--color-primary);">
+        <span>Promo Discount</span>
+        <span id="cart-discount-val">-$0.00</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:1.15rem; font-weight:700; font-family:var(--font-serif); color:var(--color-charcoal); margin-bottom:18px; padding-top:8px; border-top:1px solid var(--color-border);">
+        <span>Total</span>
+        <span id="cart-total-val">$0.00</span>
+      </div>
+      <button id="cart-checkout-btn" class="btn btn-primary" style="width:100%;" onclick="simulateCheckout()">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <div class="drawer-backdrop" id="wishlist-drawer-backdrop" onclick="closeWishlistDrawer()"></div>
+  <aside class="drawer-panel" id="wishlist-drawer-panel" aria-label="Wishlist Drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Saved Wishlist</h3>
+      <button class="btn-card-action" onclick="closeWishlistDrawer()" aria-label="Close Wishlist">✕</button>
+    </div>
+    <div class="drawer-body" id="wishlist-items-container"></div>
+  </aside>
+
+  <div class="modal-overlay" id="quickview-modal" onclick="if(event.target === this) closeQuickView()">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close">✕</button>
+      <div id="quickview-modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target === this) closeSearchModal()">
+    <div class="search-modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h4 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Search Floral Stems</h4>
+        <button class="btn-card-action" onclick="closeSearchModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="search-modal-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-modal-input" placeholder="Search by flower, occasion, or name..." oninput="handleSearchInput(this.value)">
+      </div>
+      <div class="search-results-list" id="search-modal-results"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="checkout-modal" onclick="if(event.target === this) closeCheckoutModal()">
+    <div class="modal-container" style="max-width:550px; padding:32px;">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close">✕</button>
+      <div class="text-center" style="margin-bottom:24px;">
+        <span class="badge badge-sage" style="margin-bottom:8px;">Fast-Track Checkout</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem;">Complete Your Order</h3>
+        <p style="font-size:0.88rem; color:var(--color-muted);">Total: <strong id="checkout-amount-display" style="color:var(--color-charcoal);">$0.00</strong></p>
+      </div>
+      <form onsubmit="completeSimulatedOrder(event)">
+        <div class="form-control-wrap">
+          <label class="form-label">Recipient's Full Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Eleanor Vance" required>
+        </div>
+        <div class="form-control-wrap">
+          <label class="form-label">Delivery Address &amp; Suite</label>
+          <input type="text" class="form-input" placeholder="e.g. 742 Park Avenue, Apt 14B" required>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" class="form-control-wrap">
+          <div>
+            <label class="form-label">Delivery Date</label>
+            <input type="date" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">Contact Phone</label>
+            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+        <div class="form-control-wrap">
+          <label class="form-label">Calligraphy Card Message</label>
+          <textarea class="form-textarea" style="min-height:80px;" placeholder="Write your heartfelt message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Place Bouquet Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blosso | Luxury Florist Edition</title>
+  <meta name="description" content="Blosso Luxury Edition - Bespoke bridal floral design, corporate event floristry, rare seasonal stems, and white-glove flower delivery.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css?v=feedback_dark_match">
+</head>
+<body>
+
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-links announcement-left">
+        <a href="tel:+18005553567"><span>📞 Concierge: +1 (800) 555-BLOSSO</span></a>
+      </div>
+      <div class="announcement-ticker">
+        <span>✨ Complimentary Card &amp; Chilled Same-Day Delivery over $75 &middot; Code: <strong>BLOSSO10</strong></span>
+      </div>
+      <div class="announcement-links announcement-right">
+        <a href="delivery.html">Delivery Coverage</a>
+        <a href="contact.html">Boutique Hours</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Blosso Home">
+        <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-dasharray="4 2"/>
+          <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z" fill="currentColor" fill-opacity="0.18"/>
+          <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Blosso</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link active">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="delivery.html" class="nav-link">Delivery</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Controls: RTL, Theme Toggle & CTA Button -->
+      <div class="header-actions">
+        <!-- RTL Toggle Button -->
+        <button class="header-util-btn" onclick="toggleRTL()" title="Toggle RTL / LTR Layout" aria-label="Toggle Text Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19h16M4 15h10M4 11h16M4 7h10"></path>
+          </svg>
+          <span class="rtl-btn-text">RTL</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="header-util-btn header-util-icon-only" onclick="toggleTheme()" title="Toggle Dark / Light Mode" aria-label="Toggle Theme">
+          <span class="theme-icon-sun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-icon-moon" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Header CTA Button -->
+        <a href="products.html" class="btn btn-primary btn-sm header-cta-btn">Order Now &rarr;</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-toggle-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-name" style="font-size:1.4rem;">Blosso</span>
+      <button class="btn-card-action" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html" class="active">Home2</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="products.html" class="btn btn-primary" style="width:100%; margin-bottom:10px;">Order Now &rarr;</a>
+      <a href="tel:+18005553567" class="btn btn-outline-primary btn-sm" style="width:100%;">Concierge Line</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================= SECTION 1: LUXURY EDITORIAL HERO ================= -->
+    <section class="hero-editorial">
+      <div class="container">
+        <div class="hero-editorial-grid">
+          <div>
+            <span class="badge badge-sage" style="margin-bottom:16px;">Haute Botanical Masterpieces</span>
+            <h1 class="heading-xl" style="margin-bottom:18px;">
+              Sculpted by Nature, Curated for <span style="font-family:var(--font-editorial); font-style:italic; color:var(--color-primary);">Distinction.</span>
+            </h1>
+            <p style="font-size:1.15rem; color:var(--color-muted); line-height:1.7; margin-bottom:32px;">
+              Blosso Luxury Edition provides bespoke floral architecture for private estates, weddings, galas, and discerning collectors of fine botanical stems.
+            </p>
+            <div class="hero-cta-group" style="margin-bottom:36px;">
+              <a href="delivery.html#custom-builder" class="btn btn-primary btn-lg">Commission Custom Arrangement</a>
+              <a href="delivery.html#bulk-orders" class="btn btn-outline-primary btn-lg">Corporate &amp; Event Booking &rarr;</a>
+            </div>
+            <div class="hero-trust-metrics">
+              <div>🌿 <strong>100% Eco-Certified</strong> Farms</div>
+              <div>✨ <strong>Hand-Tied</strong> in Silk</div>
+              <div>🧊 <strong>Chilled Fleet</strong> Delivery</div>
+            </div>
+          </div>
+
+          <!-- Mosaic Gallery -->
+          <div class="editorial-gallery-mosaic">
+            <div class="mosaic-item">
+              <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80" alt="Cascading Orchid Arrangement">
+            </div>
+            <div class="mosaic-item">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80" alt="Peony Symphony">
+            </div>
+            <div class="mosaic-item">
+              <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80" alt="White Eden Rose Collection">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: SEASONAL BLOOM CURATION ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-base);">
+      <div class="container">
+        <div class="text-center" style="max-width:650px; margin:0 auto 40px;">
+          <span class="tag-label">Current Boutique Focus</span>
+          <h2 class="heading-lg">Rare Seasonal Stems on Display</h2>
+          <div class="botanical-divider">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <p class="text-muted">Directly imported from heritage family growers in Grasse, Aalsmeer, and the Andean highlands.</p>
+        </div>
+
+        <div class="specimen-grid">
+          <!-- Specimen 1 -->
+          <div class="specimen-card">
+            <div class="specimen-img-wrap">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80" alt="French Garden Peonies">
+              <span class="specimen-origin-tag">Grasse, France · In Peak Bloom</span>
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">French Garden Peonies</h4>
+              <p class="specimen-desc">Fragrant multi-layered coral and ivory petals with unparalleled 12-day vase vitality.</p>
+              <div class="specimen-footer">
+                <span>Vase Life: 12+ Days</span>
+                <span>Boutique Grade A+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 2 -->
+          <div class="specimen-card">
+            <div class="specimen-img-wrap">
+              <img src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?auto=format&fit=crop&w=600&q=80" alt="Café au Lait Dahlias">
+              <span class="specimen-origin-tag">Andes · Limited Harvest</span>
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">Café au Lait Dahlias</h4>
+              <p class="specimen-desc">Dinner-plate blooms featuring creamy blush undertones and organic spiraling architectural form.</p>
+              <div class="specimen-footer">
+                <span>Vase Life: 10+ Days</span>
+                <span>Boutique Grade A+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 3 -->
+          <div class="specimen-card">
+            <div class="specimen-img-wrap">
+              <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80" alt="Cymbidium Orchids">
+              <span class="specimen-origin-tag">Aalsmeer · Heritage Cut</span>
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">Cymbidium Orchids</h4>
+              <p class="specimen-desc">Sculptural white and lime green cascades bringing dramatic grandeur to dining centerpieces.</p>
+              <div class="specimen-footer">
+                <span>Vase Life: 18+ Days</span>
+                <span>Boutique Grade A+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 4 -->
+          <div class="specimen-card">
+            <div class="specimen-img-wrap">
+              <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80" alt="Black Baccara Roses">
+              <span class="specimen-origin-tag">Provence · Slow Cut</span>
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">Black Baccara Roses</h4>
+              <p class="specimen-desc">Velvety crimson stems that shift to near-black in evening light, embodying timeless romance.</p>
+              <div class="specimen-footer">
+                <span>Vase Life: 14+ Days</span>
+                <span>Boutique Grade A+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: FEATURED LUXURY BOUQUETS ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-warm);">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:40px;">
+          <div>
+            <span class="tag-label">Haute Floristry Selection</span>
+            <h2 class="heading-lg">Signature Masterpiece Arrangements</h2>
+            <p class="text-muted">Handcrafted for momentous occasions with heavy-gauge glass vessel options.</p>
+          </div>
+          <a href="products.html" class="btn btn-secondary">Explore All Products &rarr;</a>
+        </div>
+
+        <div class="product-grid" id="home2-featured-grid">
+          <!-- Populated by inline script below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: OCCASION-BASED CURATED GALLERY ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-base);">
+      <div class="container">
+        <div class="text-center" style="max-width:650px; margin:0 auto 40px;">
+          <span class="tag-label">Boutique Lookbook</span>
+          <h2 class="heading-lg">Curated Chapters for Life's Moments</h2>
+          <div class="botanical-divider">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <p class="text-muted">Distinct floral architecture tailored specifically to express devotion, celebrate milestones, or offer gentle comfort.</p>
+        </div>
+
+        <div class="bento-chapters-grid">
+          <!-- Card 1: Wide Featured Banner - Bridal Architecture (Span 7) -->
+          <a href="products.html?occasion=Wedding" class="bento-chapter-card bento-card-wide">
+            <div class="bento-wide-img">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Bridal & Ceremony Cascades">
+            </div>
+            <div class="bento-wide-content">
+              <div>
+                <span class="bento-chapter-number">Chapter 01</span>
+                <h3 class="bento-chapter-title">Bridal &amp; Grand Ceremonials</h3>
+                <p class="bento-chapter-desc">Cascading Avalanche roses, white phalaenopsis, and Italian ruscus composed to frame unforgettable vows.</p>
+                <div class="bento-specs-pill">✨ Signature: Avalanche &amp; Orchids · From $145</div>
+              </div>
+              <span class="bento-chapter-link">Explore Bridal Boutique &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 2: Vertical Portrait - Anniversary Romance (Span 5) -->
+          <a href="products.html?occasion=Anniversary" class="bento-chapter-card bento-card-portrait">
+            <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80" alt="Anniversary Romance" class="bento-portrait-img">
+            <div class="bento-portrait-content">
+              <span class="bento-chapter-number">Chapter 02</span>
+              <h3 class="bento-chapter-title">Intimate Devotion &amp; Romance</h3>
+              <p class="bento-chapter-desc" style="color:rgba(255,255,255,0.88); margin-bottom:8px;">Sensory velvet burgundy roses and black dahlias paired with wax-sealed calligraphy.</p>
+              <div style="font-size:0.72rem; color:#E2DFD8; margin-bottom:10px; font-weight:600;">🌹 Velvet Petals · 14-Day Vase Life · From $115</div>
+              <span class="bento-chapter-link">Curate Romance Stems &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 3: Half Row - Milestone Celebrations (Span 6) -->
+          <a href="products.html?occasion=Birthday" class="bento-chapter-card bento-card-half">
+            <div class="bento-half-img">
+              <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=80" alt="Milestone Celebrations">
+            </div>
+            <div class="bento-half-content">
+              <div>
+                <span class="bento-chapter-number">Chapter 03</span>
+                <h3 class="bento-chapter-title">Milestone Celebrations</h3>
+                <p class="bento-chapter-desc">Exotic parrot tulips and vibrant garden dahlias bringing electric joy and festive warmth.</p>
+                <div class="bento-specs-pill">🎉 Joyful Palette · From $88</div>
+              </div>
+              <span class="bento-chapter-link">Explore Celebrations &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 4: Half Row - Heartfelt Sympathy (Span 6) -->
+          <a href="products.html?occasion=Sympathy" class="bento-chapter-card bento-card-half">
+            <div class="bento-half-img">
+              <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80" alt="Heartfelt Sympathy">
+            </div>
+            <div class="bento-half-content">
+              <div>
+                <span class="bento-chapter-number">Chapter 04</span>
+                <h3 class="bento-chapter-title">Gentle Remembrance</h3>
+                <p class="bento-chapter-desc">Serene white lilies, fragrant eucalyptus, and soft magnolia foliage designed with soothing grace.</p>
+                <div class="bento-specs-pill">🕊️ Calming White Stems · From $110</div>
+              </div>
+              <span class="bento-chapter-link">View Sympathy Tributes &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: BESPOKE CUSTOM WORKSHOP BANNER ================= -->
+    <section class="section-padding" style="background:linear-gradient(135deg, #334237 0%, #1F2421 100%); color:#FFFFFF;">
+      <div class="container">
+        <div class="hero-grid" style="align-items:center;">
+          <div>
+            <span class="badge badge-gold" style="margin-bottom:16px;">Interactive Floristry</span>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 3rem); color:#FFFFFF; margin-bottom:18px;">
+              Design Your One-of-a-Kind Bespoke Arrangement
+            </h2>
+            <p style="opacity:0.9; font-size:1.05rem; line-height:1.7; margin-bottom:28px;">
+              Select your recipient’s favorite color palette, preferred rare stems, custom budget slider, and personalized handwritten wax-sealed calligraphy card. Our Master Florists will craft it exclusively to your specifications.
+            </p>
+            <div class="workshop-btn-group">
+              <a href="delivery.html#custom-builder" class="btn btn-white btn-lg">Launch Custom Bouquet Builder &rarr;</a>
+              <a href="contact.html" class="btn btn-outline-primary btn-lg" style="border-color:#FFFFFF; color:#FFFFFF;">Consult a Florist</a>
+            </div>
+          </div>
+
+          <div style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/3;">
+            <img src="https://images.unsplash.com/photo-1516048015710-7a3b4c86be43?auto=format&fit=crop&w=900&q=80" alt="Bespoke Workshop Florals" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: CORPORATE & EVENT BULK FLORISTRY ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-warm);" id="bulk-floristry">
+      <div class="container">
+        <div class="text-center" style="max-width:650px; margin:0 auto 40px;">
+          <span class="tag-label">B2B &amp; Private Estates</span>
+          <h2 class="heading-lg">Haute Botanical Contracts &amp; Installations</h2>
+          <div class="botanical-divider">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <p class="text-muted">Tailored floral architecture for five-star hotels, luxury galas, private residences, and executive client accounts.</p>
+        </div>
+
+        <div class="b2b-suite-container">
+          <!-- Row 1: Hotels & Lobby Rotations -->
+          <div class="b2b-service-row">
+            <div class="b2b-header-group">
+              <span class="b2b-index-num">01</span>
+              <div class="b2b-title-group">
+                <h3>Hotel &amp; Lobby Rotations</h3>
+                <p>Weekly refreshed statement urns &amp; foyer cascades</p>
+              </div>
+            </div>
+            <div class="b2b-chips-group">
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Monday Morning Setup
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Mid-Week Water &amp; Stem Refresh
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Ceramic &amp; Urn Hire Included
+              </span>
+            </div>
+            <div class="b2b-action-group">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=200&q=80" alt="Lobby Florals" class="b2b-thumbnail">
+              <a href="contact.html?inquiry=hospitality" class="b2b-row-btn">Inquire Contract &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Row 2: Weddings & Gala Productions -->
+          <div class="b2b-service-row">
+            <div class="b2b-header-group">
+              <span class="b2b-index-num">02</span>
+              <div class="b2b-title-group">
+                <h3>Weddings &amp; Gala Productions</h3>
+                <p>Complete venue transformation &amp; botanical staging</p>
+              </div>
+            </div>
+            <div class="b2b-chips-group">
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                On-Site Master Florist Team
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                3D Moodboard &amp; Sample Mockup
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Full Post-Event Logistics
+              </span>
+            </div>
+            <div class="b2b-action-group">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=200&q=80" alt="Wedding Productions" class="b2b-thumbnail">
+              <a href="contact.html?inquiry=wedding" class="b2b-row-btn">Book Consultation &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Row 3: Executive VIP Gifting -->
+          <div class="b2b-service-row">
+            <div class="b2b-header-group">
+              <span class="b2b-index-num">03</span>
+              <div class="b2b-title-group">
+                <h3>Executive VIP Client Gifting</h3>
+                <p>Scheduled corporate gifting with branded wax seals</p>
+              </div>
+            </div>
+            <div class="b2b-chips-group">
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Dedicated Concierge Director
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Custom Hot-Stamped Ribbons
+              </span>
+              <span class="b2b-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated Milestone Logs
+              </span>
+            </div>
+            <div class="b2b-action-group">
+              <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=200&q=80" alt="VIP Gifting" class="b2b-thumbnail">
+              <a href="delivery.html#bulk-orders" class="b2b-row-btn">Open Account &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Floral Concierge Strip -->
+        <div class="b2b-concierge-footer">
+          <div class="b2b-concierge-note">
+            <span>⚜️</span>
+            <span><strong>Dedicated Concierge Desk:</strong> Customizing corporate &amp; estate contracts with same-day proposals across metropolitan zones.</span>
+          </div>
+          <a href="contact.html?subject=corporate-proposal" class="btn btn-primary btn-sm">Request Concierge Proposal &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7: WHITE-GLOVE VIP DELIVERY & SOURCING ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-base);">
+      <div class="container">
+        <div class="hero-grid" style="align-items:center;">
+          <div style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/3;">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=80" alt="White Glove Delivery Stems" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+
+          <div>
+            <span class="tag-label">White-Glove Courier Logistics</span>
+            <h2 class="heading-lg" style="margin-bottom:18px;">
+              Petal Perfection from Our Chilled Van to Their Hands
+            </h2>
+            <p style="color:var(--color-muted); line-height:1.7; margin-bottom:24px;">
+              Flowers are living art. We never compress our arrangements into dry cardboard cartons. Our proprietary insulated hydration pouches keep every stem drawing nutrient-rich water until placed in the recipient's vase.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <span style="color:var(--color-primary); font-size:1.2rem;">✓</span>
+                <span style="font-size:0.9rem; font-weight:600;">Constant 55°F (13°C) Climate-Controlled Delivery Fleet</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <span style="color:var(--color-primary); font-size:1.2rem;">✓</span>
+                <span style="font-size:0.9rem; font-weight:600;">Real-Time GPS Tracking &amp; Recipient Doorstep Photo SMS</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <span style="color:var(--color-primary); font-size:1.2rem;">✓</span>
+                <span style="font-size:0.9rem; font-weight:600;">Complementary Heavy-Weight Glass Vase Option</span>
+              </div>
+            </div>
+            <a href="delivery.html" class="btn btn-secondary">Review Delivery Zones &amp; Cutoffs &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: CLIENT LOVE & PRESS FEATURES ================= -->
+    <section class="testimonials-section">
+      <div class="container">
+        <!-- Reference Style Overlapping Cursive & Bold Header -->
+        <div class="testimonial-hero-header">
+          <span class="testimonial-script-title">Patron</span>
+          <span class="testimonial-bold-title">FEEDBACK</span>
+        </div>
+      </div>
+
+      <!-- Moving Infinite Carousel Track with Bouquet Previews -->
+      <div class="feedback-carousel-container" aria-label="Moving Patron Testimonials">
+        <div class="feedback-track">
+          <!-- Card 1 (Amber Theme) -->
+          <div class="feedback-card-outer theme-amber">
+            <div class="feedback-stars-pill">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="feedback-inner-body">
+              <div class="feedback-bouquet-tag">
+                <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=150&q=80" alt="Orchid Sovereign" class="feedback-bouquet-img">
+                <div class="feedback-bouquet-info">
+                  <span class="feedback-bouquet-label">Ordered Bouquet</span>
+                  <span class="feedback-bouquet-name">Orchid Sovereign Luxe</span>
+                </div>
+              </div>
+              <p class="feedback-quote-text">
+                "The Grand Botanical Orchid Sovereign was the crowning centerpiece of our flagship gala. <strong>Impeccable sculptural arrangement and lasting freshness</strong> that left every guest mesmerized."
+              </p>
+            </div>
+            <div class="feedback-author-tab">
+              <span class="feedback-author-name">- GENEVIEVE ROCHE</span>
+              <span class="feedback-author-badge">Haute Couture Director · Fifth Ave</span>
+            </div>
+          </div>
+
+          <!-- Card 2 (Sage Theme) -->
+          <div class="feedback-card-outer theme-sage">
+            <div class="feedback-stars-pill">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="feedback-inner-body">
+              <div class="feedback-bouquet-tag">
+                <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=150&q=80" alt="Elysian Peony" class="feedback-bouquet-img">
+                <div class="feedback-bouquet-info">
+                  <span class="feedback-bouquet-label">Ordered Bouquet</span>
+                  <span class="feedback-bouquet-name">Elysian Rose &amp; Peony</span>
+                </div>
+              </div>
+              <p class="feedback-quote-text">
+                "I entrust Blosso with executive gifting every week. <strong>Their punctuality, bespoke wax calligraphy, and pristine stem condition</strong> are truly second to none."
+              </p>
+            </div>
+            <div class="feedback-author-tab">
+              <span class="feedback-author-name">- MARCUS THORNE</span>
+              <span class="feedback-author-badge">Managing Partner · Private Equity</span>
+            </div>
+          </div>
+
+          <!-- Card 3 (Charcoal Theme) -->
+          <div class="feedback-card-outer theme-charcoal">
+            <div class="feedback-stars-pill">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="feedback-inner-body">
+              <div class="feedback-bouquet-tag">
+                <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=150&q=80" alt="White Eden Cascades" class="feedback-bouquet-img">
+                <div class="feedback-bouquet-info">
+                  <span class="feedback-bouquet-label">Ordered Bouquet</span>
+                  <span class="feedback-bouquet-name">White Eden Cascades</span>
+                </div>
+              </div>
+              <p class="feedback-quote-text">
+                "Our wedding botanical decor was crafted by Blosso master florists. <strong>Every guest took home a bloom that remained fresh for two full weeks</strong>."
+              </p>
+            </div>
+            <div class="feedback-author-tab">
+              <span class="feedback-author-name">- AURELIA &amp; SEBASTIAN</span>
+              <span class="feedback-author-badge">Boutique Wedding · Tribeca Loft</span>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET FOR SEAMLESS LOOP -->
+          <div class="feedback-card-outer theme-amber" aria-hidden="true">
+            <div class="feedback-stars-pill">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="feedback-inner-body">
+              <div class="feedback-bouquet-tag">
+                <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=150&q=80" alt="Orchid Sovereign" class="feedback-bouquet-img">
+                <div class="feedback-bouquet-info">
+                  <span class="feedback-bouquet-label">Ordered Bouquet</span>
+                  <span class="feedback-bouquet-name">Orchid Sovereign Luxe</span>
+                </div>
+              </div>
+              <p class="feedback-quote-text">
+                "The Grand Botanical Orchid Sovereign was the crowning centerpiece of our flagship gala. <strong>Impeccable sculptural arrangement and lasting freshness</strong> that left every guest mesmerized."
+              </p>
+            </div>
+            <div class="feedback-author-tab">
+              <span class="feedback-author-name">- GENEVIEVE ROCHE</span>
+              <span class="feedback-author-badge">Haute Couture Director · Fifth Ave</span>
+            </div>
+          </div>
+
+          <div class="feedback-card-outer theme-sage" aria-hidden="true">
+            <div class="feedback-stars-pill">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="feedback-inner-body">
+              <div class="feedback-bouquet-tag">
+                <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=150&q=80" alt="Elysian Peony" class="feedback-bouquet-img">
+                <div class="feedback-bouquet-info">
+                  <span class="feedback-bouquet-label">Ordered Bouquet</span>
+                  <span class="feedback-bouquet-name">Elysian Rose &amp; Peony</span>
+                </div>
+              </div>
+              <p class="feedback-quote-text">
+                "I entrust Blosso with executive gifting every week. <strong>Their punctuality, bespoke wax calligraphy, and pristine stem condition</strong> are truly second to none."
+              </p>
+            </div>
+            <div class="feedback-author-tab">
+              <span class="feedback-author-name">- MARCUS THORNE</span>
+              <span class="feedback-author-badge">Managing Partner · Private Equity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="feedback-pause-hint">Hover to pause auto-scroll &middot; Drag to explore</p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 9: VIP EDITORIAL NEWSLETTER ================= -->
+    <section class="section-padding" style="background-color:var(--color-bg-base);">
+      <div class="container">
+        <div class="home2-salon-card">
+          <div class="home2-salon-content">
+            <span class="tag-label">Private Membership</span>
+            <h2 class="heading-lg" style="margin-bottom:16px;">The Blosso Salon</h2>
+            <p class="text-muted" style="margin-bottom:28px;">
+              Receive quarterly floral styling lookbooks, private invitations to masterclasses with Camille Laurent, and early access to limited holiday harvests.
+            </p>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); showToast('🌸 Welcome to The Blosso Salon!'); this.reset();">
+              <div class="newsletter-input-group">
+                <input type="email" class="form-input" placeholder="Enter your email..." required>
+                <button type="submit" class="btn btn-primary">Join Salon</button>
+              </div>
+            </form>
+          </div>
+          <div class="home2-salon-media">
+            <img src="https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=1200&q=80" alt="Blosso Artisanal Floral Atelier and Seasonal Workshop" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MASTER BLOSSO FOOTER ================= -->
+  <footer class="site-footer">
+    <!-- VIP Newsletter Bar -->
+    <div class="footer-vip-strip">
+      <div class="container">
+        <div class="vip-strip-content">
+          <div class="vip-strip-text">
+            <span class="vip-strip-badge">🌸 VIP Botanical Society</span>
+            <h3 class="vip-strip-title">Receive Private Previews &amp; 15% Off Your First Arrangement</h3>
+            <p class="vip-strip-desc">
+              Curated stem pairing secrets, invitations to seasonal masterclasses, and instant code <strong>BLOSSO10</strong>.
+            </p>
+          </div>
+          <form class="vip-newsletter-form" onsubmit="event.preventDefault(); showToast('🌸 Welcome to the VIP Botanical Society! Code BLOSSO10 applied.'); this.reset();">
+            <div class="vip-input-wrap">
+              <input type="email" class="vip-email-input" placeholder="Enter your email address..." required>
+              <button type="submit" class="btn btn-primary btn-sm">Join VIP Circle</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="container footer-main-content">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:14px;">
+            <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="2.5">
+              <circle cx="50" cy="50" r="46" stroke="#FFFFFF" stroke-dasharray="4 2" />
+              <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z" fill="#FFFFFF" fill-opacity="0.18" />
+              <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z" stroke="#FFFFFF" stroke-width="2.5" />
+              <circle cx="50" cy="50" r="4.5" fill="#FFFFFF" />
+            </svg>
+            <span class="brand-name" style="color:#FFFFFF;">Blosso</span>
+          </a>
+          <p class="footer-brand-bio">
+            Haute floristry studio handcrafting bespoke hand-tied bouquets, ceremonial vows, and luxury hospitality installations with chilled same-day delivery.
+          </p>
+          <div class="footer-contact-specs">
+            <div class="footer-spec-item">
+              <span class="spec-icon">📍</span>
+              <span>742 Evergreen Botanical Way, Suite 100, NY 10065</span>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">📞</span>
+              <a href="tel:+18005553567">+1 (800) 555-BLOSSO (3567)</a>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">✉️</span>
+              <a href="mailto:concierge@blosso.com">concierge@blosso.com</a>
+            </div>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Pinterest">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.1-2 .1-2.9l1.4-5.9s-.4-.8-.4-1.9c0-1.8 1-3.1 2.3-3.1 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1.1 4.2-.3 1.3.6 2.3 1.9 2.3 2.3 0 3.9-2.9 3.9-6.4 0-2.6-1.8-4.6-5-4.6-3.6 0-5.9 2.7-5.9 5.8 0 1 .3 1.8.8 2.3.1.1.1.2 0 .4l-.3 1.1c0 .2-.2.3-.4.2-1.3-.6-1.9-2.2-1.9-3.6 0-2.7 2.3-6 6.8-6 3.6 0 6.1 2.6 6.1 5.5 0 3.8-2.1 6.6-5.2 6.6-1 0-2-.6-2.3-1.2l-.6 2.5c-.2 1-.9 2.2-1.3 3A10 10 0 1 0 12 2z"></path></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html">Home</a>
+            <a href="home2.html">Home2 (Editorial)</a>
+            <a href="about.html">Our Story</a>
+            <a href="products.html">Floral Collections</a>
+            <a href="delivery.html">Same-Day Delivery</a>
+            <a href="blog.html">Botanical Journal</a>
+            <a href="contact.html">Contact &amp; Flagship</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Collections -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Occasion Stems</h4>
+          <div class="footer-links-list">
+            <a href="products.html?occasion=Birthday">Birthday Radiance</a>
+            <a href="products.html?occasion=Anniversary">Anniversary &amp; Romance</a>
+            <a href="products.html?occasion=Wedding">Wedding &amp; Ceremonials</a>
+            <a href="products.html?occasion=Sympathy">Sympathy &amp; Serenity</a>
+            <a href="products.html?occasion=Congratulations">Milestones &amp; Cheers</a>
+            <a href="delivery.html#custom-builder">Custom Bouquet Builder</a>
+          </div>
+        </div>
+
+        <!-- Column 4: Boutique Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Boutique Services</h4>
+          <div class="footer-links-list">
+            <a href="delivery.html">7-Day Freshness Promise</a>
+            <a href="delivery.html">Chilled Delivery Fleet</a>
+            <a href="delivery.html#bulk-orders">Corporate Subscriptions</a>
+            <a href="about.html">Floral Guild Heritage</a>
+            <a href="blog.html">Interactive Care Guides</a>
+            <a href="contact.html">Private Styling Hotline</a>
+          </div>
+        </div>
+
+        <!-- Column 5: Flagship Hours -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Flagship Boutique</h4>
+          <div class="footer-hours-box">
+            <div class="hours-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span>Open 7 Days A Week</span>
+            </div>
+            <div class="hours-schedule">
+              <div class="hours-row">
+                <span>Mon – Fri:</span>
+                <strong>7:30 AM – 7:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Saturday:</span>
+                <strong>8:00 AM – 6:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sunday:</span>
+                <strong>9:00 AM – 5:00 PM</strong>
+              </div>
+            </div>
+            <span class="valet-note">✨ Complimentary Porte-Cochère Valet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          &copy; 2026 Blosso Artisanal Floristry LLC. All botanical creations reserved.
+        </div>
+        <div class="footer-trust-badges">
+          <span>🔒 256-Bit SSL Encrypted</span>
+          <span>🌱 100% Eco-Farm Sourced</span>
+          <span>❄️ Chilled Transit Guarantee</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="shipping.html">Shipping</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals & Drawers -->
+  <div class="drawer-backdrop" id="cart-drawer-backdrop" onclick="closeCartDrawer()"></div>
+  <aside class="drawer-panel" id="cart-drawer-panel" aria-label="Shopping Bag Drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Your Bouquet Bag</h3>
+      <button class="btn-card-action" onclick="closeCartDrawer()" aria-label="Close Bag">✕</button>
+    </div>
+    <div class="drawer-body" id="cart-items-container"></div>
+    <div class="drawer-footer">
+      <div style="display:flex; gap:8px; margin-bottom:16px;">
+        <input type="text" id="cart-promo-input" placeholder="Promo code (e.g. FLORA10)" style="flex:1; border:1px solid var(--color-border); padding:8px 12px; border-radius:var(--radius-sm); font-size:0.85rem;">
+        <button id="apply-promo-btn" class="btn btn-outline-primary btn-sm">Apply</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:6px; color:var(--color-muted);">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+      <div id="cart-discount-row" style="display:none; justify-content:space-between; font-size:0.9rem; margin-bottom:6px; color:var(--color-primary);">
+        <span>Promo Discount</span>
+        <span id="cart-discount-val">-$0.00</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:1.15rem; font-weight:700; font-family:var(--font-serif); color:var(--color-charcoal); margin-bottom:18px; padding-top:8px; border-top:1px solid var(--color-border);">
+        <span>Total</span>
+        <span id="cart-total-val">$0.00</span>
+      </div>
+      <button id="cart-checkout-btn" class="btn btn-primary" style="width:100%;" onclick="simulateCheckout()">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <div class="drawer-backdrop" id="wishlist-drawer-backdrop" onclick="closeWishlistDrawer()"></div>
+  <aside class="drawer-panel" id="wishlist-drawer-panel" aria-label="Wishlist Drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Saved Wishlist</h3>
+      <button class="btn-card-action" onclick="closeWishlistDrawer()" aria-label="Close Wishlist">✕</button>
+    </div>
+    <div class="drawer-body" id="wishlist-items-container"></div>
+  </aside>
+
+  <div class="modal-overlay" id="quickview-modal" onclick="if(event.target === this) closeQuickView()">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close">✕</button>
+      <div id="quickview-modal-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target === this) closeSearchModal()">
+    <div class="search-modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h4 style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Search Floral Stems</h4>
+        <button class="btn-card-action" onclick="closeSearchModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="search-modal-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-modal-input" placeholder="Search by flower, occasion, or name..." oninput="handleSearchInput(this.value)">
+      </div>
+      <div class="search-results-list" id="search-modal-results"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="checkout-modal" onclick="if(event.target === this) closeCheckoutModal()">
+    <div class="modal-container" style="max-width:550px; padding:32px;">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close">✕</button>
+      <div class="text-center" style="margin-bottom:24px;">
+        <span class="badge badge-sage" style="margin-bottom:8px;">Fast-Track Checkout</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem;">Complete Your Order</h3>
+        <p style="font-size:0.88rem; color:var(--color-muted);">Total: <strong id="checkout-amount-display" style="color:var(--color-charcoal);">$0.00</strong></p>
+      </div>
+      <form onsubmit="completeSimulatedOrder(event)">
+        <div class="form-control-wrap">
+          <label class="form-label">Recipient's Full Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Eleanor Vance" required>
+        </div>
+        <div class="form-control-wrap">
+          <label class="form-label">Delivery Address &amp; Suite</label>
+          <input type="text" class="form-input" placeholder="e.g. 742 Park Avenue, Apt 14B" required>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" class="form-control-wrap">
+          <div>
+            <label class="form-label">Delivery Date</label>
+            <input type="date" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">Contact Phone</label>
+            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+        <div class="form-control-wrap">
+          <label class="form-label">Calligraphy Card Message</label>
+          <textarea class="form-textarea" style="min-height:80px;" placeholder="Write your heartfelt message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Place Bouquet Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/delivery.js"></script>
+  <script src="js/interactions.js"></script>
+
+  <!-- Inline Hydration for Home2 Featured Items -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('home2-featured-grid');
+      if (grid && FLORAL_DATA.products) {
+        const luxuryStems = [FLORAL_DATA.products[1], FLORAL_DATA.products[3], FLORAL_DATA.products[8], FLORAL_DATA.products[0]];
+        let html = '';
+        luxuryStems.forEach(item => {
+          if (!item) return;
+          const isWishlisted = shopState.wishlist.includes(item.id);
+          html += `
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="badge badge-${item.badgeType} product-badge-tag">${item.badge}</span>
+                <div class="product-action-btns">
+                  <button class="btn-card-action btn-wishlist-toggle ${isWishlisted ? 'active-wishlist' : ''}" 
+                          data-product-id="${item.id}" 
+                          onclick="shopState.toggleWishlist('${item.id}')" 
+                          title="Add to Wishlist"
+                          aria-label="Add to Wishlist">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="${isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+                  <button class="btn-card-action" onclick="openQuickView('${item.id}')" title="Quick View" aria-label="Quick View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </button>
+                </div>
+                <img src="${item.image}" alt="${item.name}" loading="lazy">
+              </div>
+              <div class="product-info">
+                <span class="product-category">${item.category}</span>
+                <h3 class="product-title"><a href="javascript:void(0)" onclick="openQuickView('${item.id}')">${item.name}</a></h3>
+                <p class="product-stems-desc">${item.stems}</p>
+                <div class="product-rating">
+                  <span class="stars">★★★★★</span>
+                  <span>${item.rating} (${item.reviewsCount})</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    ${item.oldPrice ? `<span class="old-price">$${item.oldPrice.toFixed(2)}</span>` : ''}
+                    $${item.price.toFixed(2)}
+                  </div>
+                  <button class="btn btn-add-cart" onclick="shopState.addToCart('${item.id}')">
+                    Add to Bag
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        grid.innerHTML = html;
+      }
+    });
+  </script>
+</body>
+</html>

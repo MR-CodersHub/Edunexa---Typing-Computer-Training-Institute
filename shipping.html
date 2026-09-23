@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blosso | Shipping &amp; White-Glove Delivery Policy</title>
+  <meta name="description" content="Discover Blosso's chilled transit fleet, same-day delivery cutoff times, climate-controlled packaging, and nationwide coverage areas.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-links announcement-left">
+        <a href="tel:+18005553567"><span>📞 Concierge: +1 (800) 555-BLOSSO</span></a>
+      </div>
+      <div class="announcement-ticker">
+        <span>✨ Complimentary Card &amp; Chilled Same-Day Delivery over $75 &middot; Code: <strong>BLOSSO10</strong></span>
+      </div>
+      <div class="announcement-links announcement-right">
+        <a href="delivery.html">Delivery Coverage</a>
+        <a href="contact.html">Boutique Hours</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Blosso Home">
+        <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-dasharray="4 2"/>
+          <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z" fill="currentColor" fill-opacity="0.18"/>
+          <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Blosso</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="delivery.html" class="nav-link">Delivery</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <!-- RTL Toggle Button -->
+        <button class="header-util-btn" onclick="toggleRTL()" title="Toggle RTL / LTR Layout" aria-label="Toggle Text Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19h16M4 15h10M4 11h16M4 7h10"></path>
+          </svg>
+          <span class="rtl-btn-text">RTL</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="header-util-btn header-util-icon-only" onclick="toggleTheme()" title="Toggle Dark / Light Mode" aria-label="Toggle Theme">
+          <span class="theme-icon-sun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-icon-moon" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Header CTA Button -->
+        <a href="products.html" class="btn btn-primary btn-sm header-cta-btn">Order Now &rarr;</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-toggle-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <span class="brand-name" style="font-size:1.4rem;">Blosso</span>
+      <button class="btn-card-action" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home2</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="products.html" class="btn btn-primary" style="width:100%; margin-bottom:10px;">Order Now &rarr;</a>
+      <a href="tel:+18005553567" class="btn btn-outline-primary btn-sm" style="width:100%;">Call +1 (800) 555-BLOSSO</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <span style="color:var(--color-primary); font-weight:600;">Shipping Policy</span>
+        </div>
+        <span class="tag-label">Climate-Controlled Transit</span>
+        <h1 class="heading-lg" style="margin-bottom:14px;">Shipping &amp; Delivery Policy</h1>
+        <p class="text-muted" style="max-width:640px; margin:0 auto;">
+          White-glove doorstep couriers, refrigerated fleet specifications, same-day delivery cutoff windows, and safe recipient drop protocols.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <section class="section-padding-sm" style="background-color: var(--color-bg-base);">
+      <div class="container">
+        <div class="policy-page-layout">
+          
+          <!-- Sidebar Navigation -->
+          <aside class="policy-sidebar">
+            <div class="policy-nav-card">
+              <h3 class="policy-nav-title">Legal &amp; Policy Hub</h3>
+              <div class="policy-nav-list">
+                <a href="privacy.html" class="policy-nav-item">
+                  <span>🔒</span> Privacy Policy
+                </a>
+                <a href="terms.html" class="policy-nav-item">
+                  <span>📜</span> Terms of Service
+                </a>
+                <a href="shipping.html" class="policy-nav-item active">
+                  <span>🚚</span> Shipping &amp; Delivery
+                </a>
+                <a href="accessibility.html" class="policy-nav-item">
+                  <span>♿</span> Accessibility
+                </a>
+              </div>
+            </div>
+
+            <!-- Page Table of Contents -->
+            <div class="policy-toc-card">
+              <div class="policy-toc-title">On This Page</div>
+              <div class="policy-toc-list">
+                <a href="#delivery-zones-pricing" class="policy-toc-link">&bull; 1. Zones &amp; Rates</a>
+                <a href="#sameday-cutoffs" class="policy-toc-link">&bull; 2. Same-Day Cut-Offs</a>
+                <a href="#chilled-fleet-packaging" class="policy-toc-link">&bull; 3. Chilled Packaging Tech</a>
+                <a href="#recipient-safe-drop" class="policy-toc-link">&bull; 4. Recipient Safe-Drop</a>
+                <a href="#special-destinations" class="policy-toc-link">&bull; 5. Hospitals &amp; Venues</a>
+                <a href="#freshness-guarantee" class="policy-toc-link">&bull; 6. 7-Day Guarantee</a>
+              </div>
+            </div>
+
+            <!-- Postal Lookup Card -->
+            <div class="policy-help-card" style="background:var(--color-bg-surface); color:var(--color-charcoal); border:1px solid var(--color-border); text-align:left;">
+              <h4 style="color:var(--color-charcoal); font-size:1.05rem; margin-bottom:6px;">Check Postal Code</h4>
+              <p style="color:var(--color-muted); font-size:0.8rem; margin-bottom:12px;">Verify instant courier coverage for your delivery zip code:</p>
+              <form class="postal-checker-form" onsubmit="handlePostalCheck(event)" style="display:flex; flex-direction:column; gap:8px;">
+                <input type="text" class="form-input postal-input" placeholder="e.g. 10021, 90210" required style="font-size:0.82rem; padding:8px 12px;">
+                <button type="submit" class="btn btn-primary btn-sm" style="width:100%;">Check Status</button>
+                <div class="postal-result-msg" style="font-size:0.78rem; margin-top:4px;"></div>
+              </form>
+            </div>
+          </aside>
+
+          <!-- Policy Articles -->
+          <div class="policy-content">
+            
+            <!-- Section 1 -->
+            <article class="policy-section-card" id="delivery-zones-pricing">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">🚚</div>
+                <h2 class="policy-section-title">1. Delivery Zones, Pricing &amp; Complimentary Thresholds</h2>
+              </div>
+              <p class="policy-text">
+                Every Blosso bouquet travels in our proprietary custom refrigerated vans maintained at a constant 42°F (5.5°C) to keep petals crisply hydrated and prevent thermal stress during transit.
+              </p>
+              <div class="policy-table-wrap">
+                <table class="policy-table">
+                  <thead>
+                    <tr>
+                      <th>Zone Area</th>
+                      <th>Coverage Radius</th>
+                      <th>Courier Fee</th>
+                      <th>Complimentary Threshold</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Zone 1: Metro Core</strong></td>
+                      <td>Within 15 miles of Flagship</td>
+                      <td>$9.95</td>
+                      <td><strong>Free over $75</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Zone 2: Greater Metro</strong></td>
+                      <td>15 to 35 miles radius</td>
+                      <td>$14.95</td>
+                      <td><strong>Free over $120</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Zone 3: Regional Express</strong></td>
+                      <td>35 to 60 miles radius</td>
+                      <td>$24.95</td>
+                      <td><strong>Free over $175</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <!-- Section 2 -->
+            <article class="policy-section-card" id="sameday-cutoffs">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">⏰</div>
+                <h2 class="policy-section-title">2. Same-Day Order Cut-Offs &amp; Arrival Slots</h2>
+              </div>
+              <p class="policy-text">
+                To guarantee freshly harvested stems and artisanal arrangement precision:
+              </p>
+              <div class="policy-badge-grid">
+                <div class="policy-feature-card">
+                  <div class="feature-icon">☀️</div>
+                  <div>
+                    <h5>Morning Courier Window</h5>
+                    <p>Delivered 9:00 AM – 1:00 PM (Orders placed previous evening before 9:00 PM).</p>
+                  </div>
+                </div>
+                <div class="policy-feature-card">
+                  <div class="feature-icon">🌆</div>
+                  <div>
+                    <h5>Afternoon Same-Day Window</h5>
+                    <p>Delivered 3:00 PM – 6:30 PM (Orders placed by 1:00 PM local time today).</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Section 3 -->
+            <article class="policy-section-card" id="chilled-fleet-packaging">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">❄️</div>
+                <h2 class="policy-section-title">3. Climate-Shielded Packaging &amp; Hydration Reservoirs</h2>
+              </div>
+              <p class="policy-text">
+                Unlike standard postal deliveries that cram flowers into cardboard cartons, Blosso uses an architectural unboxing experience:
+              </p>
+              <ul class="policy-list">
+                <li><strong>Aqua-Gel Stem Wraps:</strong> Every cut stem base is sealed in nutrient-infused botanical water packs providing 48 hours of continuous hydration.</li>
+                <li><strong>Rigid Fluted Travel Carriers:</strong> Upright bespoke presentation boxes preventing any petal crushing during transport.</li>
+                <li><strong>Thermal Insulative Sleeves:</strong> Protects delicate blooms against extreme winter freezing or summer heat waves.</li>
+              </ul>
+            </article>
+
+            <!-- Section 4 -->
+            <article class="policy-section-card" id="recipient-safe-drop">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">🏡</div>
+                <h2 class="policy-section-title">4. Recipient Unavailability &amp; Safe Drop Protocol</h2>
+              </div>
+              <p class="policy-text">
+                If the recipient is unavailable upon doorstep arrival:
+              </p>
+              <ul class="policy-list">
+                <li>Our courier will first contact the recipient via discreet phone call/SMS.</li>
+                <li>If permitted, the arrangement will be placed in a climate-sheltered porch area or with building concierge/doorman with photo confirmation sent immediately.</li>
+                <li>If temperature conditions are extreme and no safe drop exists, the bouquet returns to our chilled floral studio and complimentary re-delivery is coordinated.</li>
+              </ul>
+            </article>
+
+            <!-- Section 5 -->
+            <article class="policy-section-card" id="special-destinations">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">🏥</div>
+                <h2 class="policy-section-title">5. Hospitals, Hotels &amp; Corporate Venues</h2>
+              </div>
+              <p class="policy-text">
+                For deliveries to medical centers or luxury hotels, our white-glove team delivers directly to the designated receiving desk or guest concierge with full recipient room/suite documentation to ensure timely internal transfer.
+              </p>
+            </article>
+
+            <!-- Section 6 -->
+            <article class="policy-section-card" id="freshness-guarantee">
+              <div class="policy-section-header">
+                <div class="policy-section-icon">🌿</div>
+                <h2 class="policy-section-title">6. 7-Day Botanical Freshness Guarantee</h2>
+              </div>
+              <p class="policy-text">
+                We stand wholeheartedly behind every bloom. If your bouquet does not remain vibrant and radiant for at least 7 full days with proper water replenishment, simply send a photo to our concierge team at <a href="mailto:concierge@blosso.com" style="color:var(--color-primary); font-weight:600;">concierge@blosso.com</a> for an immediate replacement bouquet or full store credit.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MASTER FOOTER ================= -->
+  <footer class="site-footer">
+    <!-- VIP Newsletter Strip -->
+    <div class="footer-vip-strip">
+      <div class="container">
+        <div class="vip-strip-content">
+          <div class="vip-strip-text">
+            <span class="vip-strip-badge">✨ VIP Circle</span>
+            <h3 class="vip-strip-title">Receive Private Previews &amp; 15% Off Your First Arrangement</h3>
+            <p class="vip-strip-desc">
+              Curated stem pairing secrets, invitations to seasonal masterclasses, and instant code <strong>BLOSSO10</strong>.
+            </p>
+          </div>
+          <div class="vip-newsletter-form">
+            <form id="footer-newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+              <div class="vip-input-wrap">
+                <input type="email" class="vip-email-input" placeholder="Enter your email address..." required aria-label="Email address for newsletter">
+                <button type="submit" class="btn btn-primary btn-sm">Join VIP Circle</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="container footer-main-content">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom:14px;">
+            <svg class="brand-crest" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="2.5">
+              <circle cx="50" cy="50" r="46" stroke="#FFFFFF" stroke-dasharray="4 2" />
+              <path d="M50 18 C44 34, 28 44, 18 50 C34 56, 44 72, 50 82 C56 72, 72 56, 82 50 C72 44, 56 34, 50 18 Z"
+                fill="#FFFFFF" fill-opacity="0.18" />
+              <path d="M50 28 C46 38, 38 46, 28 50 C38 54, 46 62, 50 72 C54 62, 62 54, 72 50 C62 46, 54 38, 50 28 Z"
+                stroke="#FFFFFF" stroke-width="2.5" />
+              <circle cx="50" cy="50" r="4.5" fill="#FFFFFF" />
+            </svg>
+            <span class="brand-name" style="color:#FFFFFF;">Blosso</span>
+          </a>
+          <p class="footer-brand-bio">
+            Haute floristry studio handcrafting bespoke hand-tied bouquets, ceremonial vows, and luxury hospitality
+            installations with chilled same-day delivery.
+          </p>
+          <div class="footer-contact-specs">
+            <div class="footer-spec-item">
+              <span class="spec-icon">📍</span>
+              <span>742 Evergreen Botanical Way, Suite 100, NY 10065</span>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">📞</span>
+              <a href="tel:+18005553567">+1 (800) 555-BLOSSO (3567)</a>
+            </div>
+            <div class="footer-spec-item">
+              <span class="spec-icon">✉️</span>
+              <a href="mailto:concierge@blosso.com">concierge@blosso.com</a>
+            </div>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-icon"
+              aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-social-icon"
+              aria-label="Pinterest">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.1-2 .1-2.9l1.4-5.9s-.4-.8-.4-1.9c0-1.8 1-3.1 2.3-3.1 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1.1 4.2-.3 1.3.6 2.3 1.9 2.3 2.3 0 3.9-2.9 3.9-6.4 0-2.6-1.8-4.6-5-4.6-3.6 0-5.9 2.7-5.9 5.8 0 1 .3 1.8.8 2.3.1.1.1.2 0 .4l-.3 1.1c0 .2-.2.3-.4.2-1.3-.6-1.9-2.2-1.9-3.6 0-2.7 2.3-6 6.8-6 3.6 0 6.1 2.6 6.1 5.5 0 3.8-2.1 6.6-5.2 6.6-1 0-2-.6-2.3-1.2l-.6 2.5c-.2 1-.9 2.2-1.3 3A10 10 0 1 0 12 2z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon"
+              aria-label="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html">Home</a>
+            <a href="home2.html">Home2 (Editorial)</a>
+            <a href="about.html">Our Story</a>
+            <a href="products.html">Floral Collections</a>
+            <a href="delivery.html">Same-Day Delivery</a>
+            <a href="blog.html">Botanical Journal</a>
+            <a href="contact.html">Contact &amp; Flagship</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Collections -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Occasion Stems</h4>
+          <div class="footer-links-list">
+            <a href="products.html?occasion=Birthday">Birthday Radiance</a>
+            <a href="products.html?occasion=Anniversary">Anniversary &amp; Romance</a>
+            <a href="products.html?occasion=Wedding">Wedding &amp; Ceremonials</a>
+            <a href="products.html?occasion=Sympathy">Sympathy &amp; Serenity</a>
+            <a href="products.html?occasion=Congratulations">Milestones &amp; Cheers</a>
+            <a href="delivery.html#custom-builder">Custom Bouquet Builder</a>
+          </div>
+        </div>
+
+        <!-- Column 4: Boutique Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Boutique Services</h4>
+          <div class="footer-links-list">
+            <a href="delivery.html">7-Day Freshness Promise</a>
+            <a href="delivery.html">Chilled Delivery Fleet</a>
+            <a href="delivery.html#bulk-orders">Corporate Subscriptions</a>
+            <a href="about.html">Floral Guild Heritage</a>
+            <a href="blog.html">Interactive Care Guides</a>
+            <a href="contact.html">Private Styling Hotline</a>
+          </div>
+        </div>
+
+        <!-- Column 5: Flagship Hours -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Flagship Boutique</h4>
+          <div class="footer-hours-box">
+            <div class="hours-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span>Open 7 Days A Week</span>
+            </div>
+            <div class="hours-schedule">
+              <div class="hours-row">
+                <span>Mon – Fri:</span>
+                <strong>7:30 AM – 7:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Saturday:</span>
+                <strong>8:00 AM – 6:30 PM</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sunday:</span>
+                <strong>9:00 AM – 5:00 PM</strong>
+              </div>
+            </div>
+            <span class="valet-note">✨ Complimentary Porte-Cochère Valet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          &copy; 2026 Blosso Artisanal Floristry LLC. All botanical creations reserved.
+        </div>
+        <div class="footer-trust-badges">
+          <span>🔒 256-Bit SSL Encrypted</span>
+          <span>🌱 100% Eco-Farm Sourced</span>
+          <span>❄️ Chilled Transit Guarantee</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="shipping.html" style="color:#FFFFFF; font-weight:600;">Shipping</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+</html>
